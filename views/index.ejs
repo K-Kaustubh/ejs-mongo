@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('layouts/header'); -%>
+
+  <body>
+    <div class="add" style="text-align: center">
+      <a href="/users"> Add Students </a>
+    </div>
+    <div class="container">
+      <%- include('layouts/navbar'); -%>
+
+      <h1>Users saved to mongoDB:</h1>
+
+      <% usersList.forEach(user => { %>
+
+      <div class="users">
+        <h1>User id: <span><%= user._id %>;</span></h1>
+
+        <div class="fullname">
+          <div class="firstname">
+            <span>First Name:</span><%= user.firstname %>
+            <br />
+            <span>Last Name:</span><%= user.lastname %>
+          </div>
+        </div>
+
+        <div class="username"><span>Username:</span><%= user.username %></div>
+
+        <div class="mail"><span>Email:</span><%= user.email %></div>
+
+        <div class="Course"><span>Course:</span><%= user.Course %></div>
+
+        <div class="age"><span>Age:</span><%= user.age %></div>
+      </div>
+
+      <% }) %>
+    </div>
+
+    <%- include('layouts/footer'); -%> <%- include('layouts/scripts'); -%>
+  </body>
+</html>
